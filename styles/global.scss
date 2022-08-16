@@ -4,6 +4,22 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
 
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width:  $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+}
+
 html,
 body {
   padding: 0;
@@ -26,6 +42,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
   }
+  
+  @include scrollbars(8px, #d3d3d3, #fff);
 }
 
 .text-shadow{
