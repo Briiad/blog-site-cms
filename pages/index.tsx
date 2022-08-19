@@ -9,7 +9,10 @@ export default function Home ({ posts }) {
   return (
     <div className="container mx-auto px-10 mb-8">
       <Head>
-        <title>Briiiad's Blog CMS</title>
+        <title>Bllgo</title>
+        <meta name="viewport" charSet='utf-8' content="initial-scale=1.0, width=device-width" />
+        <meta name="author" content='Brian Aditya' />
+        <meta name='description' content='This site provides articles that i made around the topics of internet technologies for development purposes' />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
