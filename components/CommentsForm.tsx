@@ -10,12 +10,11 @@ const CommentsForm = ({slug}) => {
 
   const storeDataEl = useRef()
   const emailEl = useRef()
-  const nameEl = useRef<HTMLInputElement>(null) 
+  const nameEl = useRef() 
   const commentEl = useRef()
 
   useEffect(() => {
-    const node = nameEl.current
-    node.value = window.localStorage.getItem('name')
+    nameEl.current.value = window.localStorage.getItem('name')
     emailEl.current.value = window.localStorage.getItem('email')
   }, [])
 
