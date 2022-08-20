@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react'
+import { isNull } from 'util'
 import { submitComment } from '../services'
 
 const CommentsForm = ({slug}) => {
@@ -9,12 +10,12 @@ const CommentsForm = ({slug}) => {
 
   const storeDataEl = useRef()
   const emailEl = useRef()
-  const nameEl = useRef()
+  const nameEl = useRef<HTMLInputElement>(null) 
   const commentEl = useRef()
 
   useEffect(() => {
-    
-    nameEl.current.value = window.localStorage.getItem('name')
+    const node = nameEl.current
+    node.value = window.localStorage.getItem('name')
     emailEl.current.value = window.localStorage.getItem('email')
   }, [])
 
